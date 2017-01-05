@@ -1,0 +1,21 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()" class="ui form" [hidden]="loginService.checkLogin()">
+
+    <div class="field">
+      <label for="username">Username</label>
+      <input type="text" [(ngModel)]="model.username" ngControl="username" placeholder="Username" name="username" required>
+    </div>
+    <div class="field">
+      <label for="passoword">Password</label>
+      <input type="password" [(ngModel)]="model.password" ngControl="password" placeholder="password" name="password" required>
+    </div>
+
+    <button type="submit" class="ui button">Submit</button>
+
+  </form>
+
+  <div [hidden]="!loginService.checkLogin()">
+    <h3>Logged succesfully</h3>
+    <h2>Welcome back {{currentUserName}}</h2>
+  </div>
+</div>

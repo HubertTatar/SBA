@@ -1,7 +1,11 @@
 package com.example.service;
 
-/**
- * Created by britenet on 04.01.2017.
- */
+import com.example.model.User;
+
+import java.util.List;
+
 public interface UserService {
+    List<User> findAllusers();
+    User findUserName(String userName);
+    User save(User user);
 }

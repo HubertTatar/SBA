@@ -1,7 +1,14 @@
 package com.example.service;
 
-/**
- * Created by britenet on 04.01.2017.
- */
+import com.example.model.Photo;
+import com.example.model.User;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
 public interface PhotoService {
+    List<Photo> findAll();
+    List<Photo> findByUser(User user);
+    Photo findByPhotoId(Long photoId);
+    Photo save(Photo photo);
 }
